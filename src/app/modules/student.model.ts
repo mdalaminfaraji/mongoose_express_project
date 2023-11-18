@@ -4,7 +4,7 @@ import {
   Student,
   UserName,
 } from './student/student.interface';
-import { Schema, model, connect } from 'mongoose';
+import { Schema, model } from 'mongoose';
 
 const userNameSchema = new Schema<UserName>({
   firstName: {
@@ -56,3 +56,5 @@ const studentSchema = new Schema<Student>({
   profileImage: { type: String },
   isActive: ['active', 'blocked'],
 });
+
+export const StudentModel = model<Student>('Student', studentSchema);
